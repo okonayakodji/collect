@@ -1,0 +1,5 @@
+orthrus:
+  time: "00:27-00:35" # Always string. Time gaps are maintained.
+  every: "1d" # Always string. For example: "5h" - 5 hours, "10m" - 10 minutes, "3d" - 3 days, "2.5s" - 2.5 seconds.
+  accounts: # Always list
+    - login: password
