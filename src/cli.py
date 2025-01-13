@@ -22,5 +22,13 @@ def parse_args():
         default=Path(config.DEFAULT_PATH_TO_CONFIG),
         help=f'path to config. default: "{config.DEFAULT_PATH_TO_CONFIG}"',
     )
+    parser.add_argument(
+        "-r",
+        "--recheck-timer",
+        dest="recheck_timer",
+        type=int,
+        default=3,
+        help="seconds before rechecking plugins",
+    )
 
     return parser.parse_args()
