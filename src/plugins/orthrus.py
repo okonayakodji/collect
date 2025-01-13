@@ -1,7 +1,14 @@
-"""Plugin for https://orthrusonline.ru"""
+"""
+Plugin for "https://orthrusonline.ru".
+"""
 
-from plugin import Plugin
+from .plugin import Plugin
 
 
 class OrthrusPlugin(Plugin, aliases=["orthrus"]):
-    pass
+    """
+    Plugin for https://orthrusonline.ru - a pokemon game where you can get
+    a reward every day just by logging into the game.
+    """
+
+    raise NotImplementedError

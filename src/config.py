@@ -1,5 +1,5 @@
 """
-Internal app config
+Internal app config.
 """
 
 DEFAULT_PATH_TO_CONFIG = "./collect.yaml"

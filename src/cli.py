@@ -1,5 +1,5 @@
 """
-Module for creating command line interface
+Module for creating command line interface.
 """
 
 from pathlib import Path
@@ -10,7 +10,7 @@ import config
 
 def parse_args():
     """
-    TODO
+    Function to create a command line tool using the standard `argparse` library.
     """
 
     parser = ArgumentParser()

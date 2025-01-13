@@ -2,14 +2,27 @@
 
 from abc import abstractmethod
 
+
 REGISTRY = {}
 
 
 class Plugin:
-    """TODO"""
+    """
+    Metaclass for creating plugins.
+
+    > When creating a new plugin, you need to specify the
+    `aliases` parameter - a list of possible plugin names
+    that will be searched for in the configuration file.
+
+    > Each alias will be added to the `REGISTRY` - a dictionary
+    used to search for plugins by other program modules.
+    """
 
     def __init_subclass__(cls, aliases=None | list, **kwargs):
-        """TODO"""
+        """
+        Function called when subclasses are created.
+        Used to implement alias logic.
+        """
 
         super().__init_subclass__(**kwargs)
         if aliases:
@@ -23,12 +36,18 @@ class Plugin:
 
     @abstractmethod
     def check(self):
-        """TODO"""
+        """
+        Function to check if the plugin should be run now.
+        """
         raise NotImplementedError
 
     @abstractmethod
     def run(self):
-        """TODO"""
+        """
+        Function to run if the plugin is ready.
+        Separated so that plugin readiness can be logged.
+        """
+
         raise NotImplementedError
 
     @abstractmethod

@@ -1,5 +1,5 @@
 """
-Program for collecting daily bonuses, configured by .yaml file
+Program for collecting daily bonuses, configured by .yaml file.
 """
 
 import logging
@@ -12,7 +12,10 @@ from collect import Collect
 
 
 def main():
-    """Entrypoint"""
+    """
+    App entrypoint
+    """
+
     args = parse_args()
 
     logging.basicConfig(

@@ -1,5 +1,5 @@
 """
-program logic
+Module for separating the main class of a program.
 """
 
 import logging
@@ -10,17 +10,24 @@ from work_with_yaml import parse_config
 
 
 class Collect:
-    """TODO"""
+    """
+    The main class of the program.
+    It is needed to initialize the configuration and launch plugins.
+    """
 
     def __init__(self, yaml_config: Path, logger: logging.Logger | None = None):
-        """TODO"""
+        """
+        Default init.
+        """
 
         self.yaml_config = yaml_config
         self.config_content = None
         self.logger = logger
 
     def with_parsed_config(self):
-        """TODO"""
+        """
+        Factory method to update class with parsed config file.
+        """
 
         temp_content = parse_config(self.yaml_config)
         if temp_content:
@@ -28,12 +35,19 @@ class Collect:
         return self
 
     def debug(self, message: str):
-        """wrapper for logging.debug"""
+        """
+        Wrapper for `logging.debug`.
+        """
+
         if self.logger:
             self.logger.debug(message)
 
     def run(self):
-        """TODO"""
+        """
+        Function to start the instance.
+        Will recheck plugins every few specified seconds.
+        """
+
         raise NotImplementedError
 
     def __repr__(self):
