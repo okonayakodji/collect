@@ -11,4 +11,11 @@ class OrthrusPlugin(Plugin, aliases=["orthrus"]):
     a reward every day just by logging into the game.
     """
 
-    raise NotImplementedError
+    def __init__(self, **kwargs):
+        print("Generated")
+
+    def is_ready(self) -> bool:
+        print("Checking")
+
+    def run(self):
+        print("Running")

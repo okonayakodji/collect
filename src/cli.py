@@ -27,7 +27,7 @@ def parse_args():
         "--recheck-timer",
         dest="recheck_timer",
         type=int,
-        default=3,
+        default=config.DEFAULT_RECHECK_TIMER,
         help="seconds before rechecking plugins",
     )
 

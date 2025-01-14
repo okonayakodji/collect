@@ -31,11 +31,11 @@ class Plugin:
         cls.aliases = aliases
 
     @abstractmethod
-    def __init__(self):
+    def __init__(self, **kwargs):
         raise NotImplementedError
 
     @abstractmethod
-    def check(self):
+    def is_ready(self) -> bool:
         """
         Function to check if the plugin should be run now.
         """
@@ -50,6 +50,7 @@ class Plugin:
 
         raise NotImplementedError
 
-    @abstractmethod
-    def __str__(self):
-        raise NotImplementedError
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        class_fields = str(self.__dict__)
+        return f"{class_name} {class_fields}"

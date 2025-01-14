@@ -27,6 +27,7 @@ def main():
 
     try:
         app = Collect(args.config, logging.getLogger(__name__)).with_parsed_config()
+        app.run(args.recheck_timer)
     except ValueError:
         logging.error("Invalid file extension. Should be .yaml or .yml")
         sys_exit()
