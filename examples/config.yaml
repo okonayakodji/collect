@@ -1,6 +1,7 @@
 default_settings: &default
   accounts:
-    login: password
+    - login: password
+    - login2: password2
 
 plugins:
   orthrus:
