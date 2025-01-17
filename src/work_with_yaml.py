@@ -17,7 +17,4 @@ def parse_config(config: Path):
         match suffix:
             case ".yaml" | ".yml":
                 return parse_yaml(config.open("r"))
-            case _:
-                raise ValueError("Invalid file extension")
-    else:
-        raise ValueError("Invalid file extension")
+    raise ValueError("Invalid file extension")
