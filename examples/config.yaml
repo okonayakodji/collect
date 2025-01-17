@@ -1,2 +1,7 @@
+default_settings: &default
+  accounts:
+    login: password
+
 plugins:
   orthrus:
+    <<: *default
