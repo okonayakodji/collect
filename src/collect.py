@@ -27,16 +27,6 @@ class Collect:
         self.config_content = None
         self.logger = logger
 
-    def with_parsed_config(self):
-        """
-        Factory method to update class with parsed config file.
-        """
-
-        temp_content = parse_config(self.yaml_config)
-        if temp_content:
-            self.config_content = temp_content.get(config.START_FIELD_IN_YAML)
-        return self
-
     def debug(self, message: str):
         """
         Wrapper for `logging.debug`.
@@ -60,6 +50,17 @@ class Collect:
 
         if self.logger:
             self.logger.error(message)
+
+    def with_parsed_config(self):
+        """
+        Factory method to update class with parsed config file.
+        """
+
+        temp_content = parse_config(self.yaml_config)
+        self.debug(f"Parsed content from the config file:\n{temp_content}")
+        if temp_content:
+            self.config_content = temp_content.get(config.START_FIELD_IN_YAML)
+        return self
 
     def run(self, recheck_timer: int):
         """
