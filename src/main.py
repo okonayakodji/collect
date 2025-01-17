@@ -32,8 +32,6 @@ def main():
         logging.error("Invalid file extension. Should be .yaml or .yml")
         sys_exit()
 
-    logging.debug(_ := f"fields of created app\n{app}")
-
 
 if __name__ == "__main__":
     main()
